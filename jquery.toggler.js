@@ -90,6 +90,8 @@ Toggler.init = function(options) {
 	$(window).bind('keyup',function(event) {
 		Toggler.keyup(event,object);
 	});
+	
+	return this;
 }
 
 /**
