@@ -1,0 +1,36 @@
+/**
+ * jQuery Toggler plugin.
+ * @author Patrick McFern <mcferno AT gmail.com>
+ *
+ * Allows DOM elements to be toggled on and off following a keyboard sequence 
+ * of a single or a set of key strokes.
+ *
+ * Invoked with default settings:
+ *   $('selection criteria').toggle();
+ *
+ * Invoked with optional parameters:
+ *   $('selection criteria').toggle({ option: value });
+ *
+ * Optional Parameters
+ *
+ *   - keyCode : the keyCode(s) which triggers the toggling on and off
+ *       Can be a number, or an array of keyCodes (forming a sequence)
+ *
+ *   - duration : the number of milliseconds in which the key code sequence
+ *       must be completed. Irrelevant for single key code sequences.
+ *
+ *   - toggleOn : callback function to trigger when the Object has been toggled on.
+ *
+ *   - toggleOff : callback function to trigger when the Object has been toggled off.
+ *
+ *   - toggled : boolean value indicating whether or not the Object is currently 
+ *       toggled on. 
+ *
+ * defaults = {
+ *   keyCode  : [192, 192], // Double `
+ *   duration : 2000, // 2 seconds
+ *   toggled  : object.is(':visible')
+ *   toggleOn : object.slideDown();
+ *   toggleOff: object.slideUp();
+ * }
+ */
