@@ -6,10 +6,10 @@
  * of a single or a set of key strokes.
  *
  * Invoked with default settings:
- *   $('selection criteria').toggle();
+ *   $('selection criteria').toggler();
  *
  * Invoked with optional parameters:
- *   $('selection criteria').toggle({ option: value });
+ *   $('selection criteria').toggler({ option: value });
  *
  * Optional Parameters
  *
