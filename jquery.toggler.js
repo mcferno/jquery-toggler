@@ -176,8 +176,12 @@ Toggler.toggleOff = function(obj) {
  * console.
  */
 Toggler.debugMode = function() {
-	$(window).keyup(function(event) {
-		console.log('keyCode: '+event.keyCode); 
+	$(document).keyup(function(event) {
+		if(typeof console == 'undefined') {
+			alert('keyCode: '+event.keyCode);
+		} else {
+			console.log('keyCode: '+event.keyCode); 
+		}
 	});
 }
 
