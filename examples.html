@@ -51,7 +51,7 @@
 
 <body>
 	<h1>jQuery Toggler</h1>
-	<p>Trigger hidden content with a single or a series of specific keystrokes.</p>
+	<p>Triggers hidden content with a single or a series of specific keystrokes.</p>
 	
 	<h2>Installation</h2>
 	
@@ -59,6 +59,7 @@
 		<li>Download jQuery Toggler: <a href="https://github.com/mcferno/jquery-toggler">Github</a></li>
 		
 		<li>Load jQuery</li>
+		
 <code><pre>
 &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"&gt;&lt;/script&gt;
 </pre></code>
@@ -148,7 +149,7 @@ $('.example3').toggler({
 
 	<h2>Example 4, Making Your Own Key Combination</h2>
 	
-	<p>Toggler has a debug mode to help you make new key combinations. Turn it on and it'll print the keyCode matching the key you just pressed in the brower's console (like <a href="http://getfirebug.com/">Firebug</a> or the built in Chrome console).</p>
+	<p>Toggler has a debug mode to help you make new key combinations. Turn it on and it'll print the keyCode matching the key you just pressed in the brower's console (like <a href="http://getfirebug.com/">Firebug</a> or the built in <a href="http://www.google.com/chrome">Chrome</a> console).</p>
 	
 <code><pre>
 Toggler.debugMode();
@@ -159,7 +160,7 @@ Toggler.debugMode();
 	<p>The hidden content you reveal with this plugin is up to you. Type `plank` in the window for a "real world" example.</p>
 	
 	<div class="example5 togglable">
-		<img src="http://plankdesign.com/externaluse/PLANK_LOGO_EMAIL.gif">
+		<img src="http://plankdesign.com/externaluse/PLANK_LOGO_EMAIL.gif" alt="Plank Logo">
 	</div>
 	
 <code><pre>
@@ -178,7 +179,7 @@ $('.example5').toggler({
 	<script type="text/javascript">
 	(function($) {
 		$(document).ready(function() {
-						
+			
 			// Example 1.
 			$('.example1').toggler();
 			
@@ -207,6 +208,7 @@ $('.example5').toggler({
 				}
 			});
 			
+			// Example 5.
 			$('.example5').toggler({
 				
 				// `plank`

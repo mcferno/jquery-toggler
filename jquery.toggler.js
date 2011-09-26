@@ -1,6 +1,7 @@
 /**
  * jQuery Toggler plugin.
  * @author Patrick McFern <mcferno AT gmail.com>
+ * @source https://github.com/mcferno/jquery-toggler
  *
  * Allows DOM elements to be toggled on and off following a keyboard sequence 
  * of a single or a set of key strokes.
