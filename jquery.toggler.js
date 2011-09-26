@@ -87,7 +87,7 @@ Toggler.init = function(options) {
 	// clear sequence variables
 	Toggler.reset(object);
 	
-	$(window).bind('keyup',function(event) {
+	$(document).bind('keyup',function(event) {
 		Toggler.keyup(event,object);
 	});
 	
