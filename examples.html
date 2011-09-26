@@ -1,0 +1,222 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>jQuery Toggler :: Examples</title>
+	<meta name="description" content="jQuery Toggler Examples. Easiest way to add the Konami code to your website with jQuery.">
+	<meta name="author" content="mcfern AT gmail DOT com">
+	<style type="text/css">
+		body {
+			font-family: 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			padding-bottom: 5em;
+		}
+		h1 {
+			font-size: 18px;
+		}
+		h2 {
+			font-size: 16px;
+		}
+		h1,h2 {
+			padding: 20px 0 10px 10px;
+		}
+		p {
+			padding-left: 10px;
+		}
+		
+		.togglable {
+			display: none;
+			border: 1px solid #ccc;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		.example5 {
+			position: fixed; 
+			bottom: 0px; 
+			right: 0px; 
+			font-size: 12px; 
+			color: #333; 
+			text-align: right; 
+			line-height: 18px;
+			padding: 0;
+			border: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>jQuery Toggler</h1>
+	<p>Trigger hidden content with a single or a series of specific keystrokes.</p>
+	
+	<h2>Installation</h2>
+	
+	<ul>
+		<li>Download jQuery Toggler: <a href="https://github.com/mcferno/jquery-toggler">Github</a></li>
+		
+		<li>Load jQuery</li>
+<code><pre>
+&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"&gt;&lt;/script&gt;
+</pre></code>
+
+		<li>Load Toggler</li>
+		
+<code><pre>
+&lt;script src="jquery.toggler.js"&gt;&lt;/script&gt;
+</pre></code>
+
+		<li>Have a piece of content you'd like to appear, which is presumably hidden by default</li>
+		
+<code><pre>
+&lt;div class="secret-content"&gt;CONTENT&lt;/div&gt;
+</pre></code>
+
+		<li>Register toggler behaviour on this DOM element.</li>
+<code><pre>
+&lt;script type="text/javascript"&gt;
+(function($) {
+	$(document).ready(function() {
+		$('.secret-content').toggler();	
+	});
+})(jQuery);
+&lt;/script&gt;
+</pre></code>
+		
+</ul>
+	
+	<h2>Example 1, No Options</h2>
+	
+	<p>By default, Toggler will use the Quake-visor inspired tilde (~) to trigger a slideUp/slideDown animation. Press tilde (~) twice within 2 seconds to activate it.</p>
+	
+<code><pre>
+$('.example1').toggler();
+</pre></code>
+
+	<div class="example1 togglable">
+		Example 1
+	</div>
+	
+	<h2>Example 2, Konami Code</h2>
+	
+	<p>If you'd like to add the <a href="http://en.wikipedia.org/wiki/Konami_Code">Konami code</a> to your website, Toggler makes it quite simple.</p>
+	
+	<p>Type out the Konami code (up, up, down, down, left, right, left, right, b, a) within 10 seconds to see it in action.</p>
+
+	<div class="example2 togglable">
+		Example 2
+	</div>
+	
+<code><pre>
+$('.example2').toggler({
+
+	// up, up, down, down, left, right, left, right, b, a
+	keyCode: [38,38,40,40,37,39,37,39,66,65],
+	
+	// 10 seconds
+	duration: 10000
+});
+</pre></code>
+	
+	<h2>Example 3, Custom Toggle Animation</h2>
+	
+	<p>If you'd prefer to control the animation of the toggling, you can pass in your own callback function.</p>
+	
+	<p>Here's how you'd change the slideUp/slideDown to use fadeIn/fadeOut instead. Press the `3` key twice to see it.</p>
+	
+	<div class="example3 togglable">
+		Example 3
+	</div>
+		
+<code><pre>
+$('.example3').toggler({
+
+	// 3, 3
+	keyCode : [51,51],
+	
+	toggleOn : function(obj) {
+		obj.fadeIn(1000);
+	},
+	toggleOff : function(obj) {
+		obj.fadeOut(1000);
+	}
+});
+</pre></code>
+
+	<h2>Example 4, Making Your Own Key Combination</h2>
+	
+	<p>Toggler has a debug mode to help you make new key combinations. Turn it on and it'll print the keyCode matching the key you just pressed in the brower's console (like <a href="http://getfirebug.com/">Firebug</a> or the built in Chrome console).</p>
+	
+<code><pre>
+Toggler.debugMode();
+</pre></code>
+
+	<h2>Example 5</h2>
+	
+	<p>The hidden content you reveal with this plugin is up to you. Type `plank` in the window for a "real world" example.</p>
+	
+	<div class="example5 togglable">
+		<img src="http://plankdesign.com/externaluse/PLANK_LOGO_EMAIL.gif">
+	</div>
+	
+<code><pre>
+$('.example5').toggler({
+	
+	// `plank`
+	keyCode : [80,76,65,78,75],
+	
+	// 10 seconds
+	duration : 10000
+});
+</pre></code>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="jquery.toggler.js"></script>
+	<script type="text/javascript">
+	(function($) {
+		$(document).ready(function() {
+						
+			// Example 1.
+			$('.example1').toggler();
+			
+			// Example 2.
+			$('.example2').toggler({
+			
+				// up, up, down, down, left, right, left, right, b, a
+				keyCode: [38,38,40,40,37,39,37,39,66,65],
+				
+				// 10 seconds
+				duration: 10000
+			});
+
+			// Example 3.
+			$('.example3').toggler({
+				
+				// 3, 3
+				keyCode : [51,51],
+				
+				toggleOn : function(obj) {
+					obj.fadeIn(1000);
+				},
+				
+				toggleOff : function(obj) {
+					obj.fadeOut(1000);
+				}
+			});
+			
+			$('.example5').toggler({
+				
+				// `plank`
+				keyCode : [80,76,65,78,75],
+				
+				// 10 seconds
+				duration : 10000
+			});
+		});
+	})(jQuery);
+	</script>
+</body>
+</html>
